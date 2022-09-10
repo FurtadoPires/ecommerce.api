@@ -15,11 +15,6 @@ namespace ecommerce.api.Controllers
         [HttpGet("[Controller]/{id}")]
         public IActionResult ObterProduto(string id)
         {
-            if (int.Parse(id) == 2)
-            {
-                return BadRequest(new { mensagem = "Id inválido" });
-            }
-
             return Ok(CargaDados.ObterProduto(id));
         }
 
