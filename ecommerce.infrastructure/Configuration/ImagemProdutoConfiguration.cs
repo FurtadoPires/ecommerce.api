@@ -48,6 +48,5 @@ namespace ecommerce.infrastructure.Configuration
             builder.HasOne(x => x.Produto)
                 .WithMany(x => x.Imagens);
         }
-
     }
 }
