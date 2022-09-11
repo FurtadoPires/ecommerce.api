@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ecommerce.infrastructure.Configuration
+namespace ecommerce.infrastructure.EntityTypeConfiguration
 {
-    public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
+    public class ProdutoEntityTypeConfiguration : IEntityTypeConfiguration<Produto>
     {
         public void Configure(EntityTypeBuilder<Produto> builder)
         {

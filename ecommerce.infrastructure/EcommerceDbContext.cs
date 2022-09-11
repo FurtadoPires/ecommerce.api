@@ -1,5 +1,5 @@
 ﻿using ecommerce.domain;
-using ecommerce.infrastructure.Configuration;
+using ecommerce.infrastructure.EntityTypeConfiguration;
 using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.infrastructure
@@ -15,8 +15,8 @@ namespace ecommerce.infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
-            modelBuilder.ApplyConfiguration(new ImagemProdutoConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ImagemProdutoEntityTypeConfiguration());
         }
     }
 }

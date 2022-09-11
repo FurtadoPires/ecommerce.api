@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 
-namespace ecommerce.infrastructure.Configuration
+namespace ecommerce.infrastructure.EntityTypeConfiguration
 {
-    public class ImagemProdutoConfiguration : IEntityTypeConfiguration<ImagemProduto>
+    public class ImagemProdutoEntityTypeConfiguration : IEntityTypeConfiguration<ImagemProduto>
     {
         public void Configure(EntityTypeBuilder<ImagemProduto> builder)
         {
