@@ -11,12 +11,13 @@ namespace ecommerce.infrastructure.EntityTypeConfiguration
             builder.ToTable("IMAGENS_PRODUTOS");
 
             builder.Property(x => x.Id)
-                .HasColumnName("ID");
+                .HasColumnName("ID")
+                .HasDefaultValueSql("uuid()");
 
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.IdProduto)
-                .HasColumnName("ID_PRODUTO");
+                .HasColumnName("ID_PRODUTOOOOOO");
 
             builder.Property(x => x.DataCadastro)
                 .HasColumnName("DATA_CADASTRO")
@@ -32,7 +33,7 @@ namespace ecommerce.infrastructure.EntityTypeConfiguration
 
             builder.Property(x => x.Nome)
                .HasColumnName("NOME")
-               .HasColumnType("nvarchar(100)")
+               .HasColumnType("varchar(100)")
                .IsRequired();
 
             builder.Property(x => x.Descricao)
@@ -42,7 +43,7 @@ namespace ecommerce.infrastructure.EntityTypeConfiguration
 
             builder.Property(x => x.CaminhoArquivo)
                 .HasColumnName("CAMINHO_ARQUIVO")
-                .HasColumnType("nvarchar(300)")
+                .HasColumnType("varchar(300)")
                 .IsRequired();
 
             builder.HasOne(x => x.Produto)

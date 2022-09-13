@@ -11,7 +11,8 @@ namespace ecommerce.infrastructure.EntityTypeConfiguration
             builder.ToTable("PRODUTOS");
 
             builder.Property(x => x.Id)
-                .HasColumnName("ID");
+                .HasColumnName("ID")
+                .HasDefaultValueSql("uuid()");
 
             builder.HasKey(x => x.Id);
 
@@ -29,21 +30,42 @@ namespace ecommerce.infrastructure.EntityTypeConfiguration
 
             builder.Property(x => x.Nome)
                .HasColumnName("NOME")
-               .HasColumnType("nvarchar(100)")
+               .HasColumnType("varchar(100)")
                .IsRequired();
 
             builder.Property(x => x.Descricao)
                .HasColumnName("DESCRICAO")
-               .HasColumnType("nvarchar(2500)")
+               .HasColumnType("varchar(5000)")
                .IsRequired();
 
             builder.Property(x => x.SKU)
                 .HasColumnName("SKU")
-                .HasColumnType("nvarchar(12)")
+                .HasColumnType("varchar(12)")
                 .IsRequired();
 
             builder.HasMany(x => x.Imagens)
                 .WithOne(x => x.Produto);
+
+            builder.HasData(
+                new Produto
+                {
+                    Nome = "ããããããõõõõõoõõõõõõ",
+                    Descricao = "sidnsaidnasidnasidas",
+                    SKU = "56768787564",
+                    DataCadastro = DateTime.Now,
+                    DataAtualizacao = DateTime.Now,
+                    Ativo = true
+                });
+            builder.HasData(
+                new Produto
+                {
+                    Nome = "ÂÂÂssíííççééÈÈÈÈÀÀÀàà",
+                    Descricao = "8769tyhfsdssf",
+                    SKU = "343445667",
+                    DataCadastro = DateTime.Now,
+                    DataAtualizacao = DateTime.Now,
+                    Ativo = true
+                });
         }
     }
 }

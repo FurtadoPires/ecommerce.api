@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string connectionString = builder.Configuration["ConnectionString"];
+string connectionString = builder.Configuration["ConnectionStrings:MariaDb"];
 
 #if DEBUG
 builder.Services.AddDbContext<EcommerceDbContext>(
