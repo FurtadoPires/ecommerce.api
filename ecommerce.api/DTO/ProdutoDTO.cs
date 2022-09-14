@@ -2,10 +2,10 @@
 {
     public class ProdutoDTO
     {
-        public string Id { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public ICollection<ImagemProdutoDTO> Imagens { get; set; }
+        public string Id { get; set; } = string.Empty;
+        public string Nome { get; set; } = string.Empty;
+        public string Descricao { get; set; } = string.Empty;
+        public ICollection<ImagemProdutoDTO> Imagens { get; set; } = new List<ImagemProdutoDTO>();
         public bool Ativo { get; set; }
     }
 }

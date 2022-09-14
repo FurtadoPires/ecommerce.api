@@ -10,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 string connectionString = builder.Configuration["ConnectionStrings:MariaDb"];
 
 #if DEBUG
